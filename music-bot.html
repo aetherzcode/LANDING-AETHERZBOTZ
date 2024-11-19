@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link href="css/commands.css" rel="stylesheet">
+    <link href="css/untitled.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/txtformatting.css">
+    <link rel="stylesheet" type="text/css" href="./css/shadow.css">
+    <link rel="stylesheet" type="text/css" href="./css/loading.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <title>AETHERzBotz - Discord Music Bot Website</title>
+</head>
+
+<body class="on">
+    <div class="loading" id="loading-box">
+        <div class="loading-item">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+    <div class="navbar">
+        <div class="container">
+            <div class="navbar-nav">
+                <span class="navbar-toggler" id="toggler"><i onclick="toggleNavbar(this)" class="fas fa-bars"></i></span>
+                <div class="navs" id="navs">
+                    <div class="navs-item notbtn"><a href="index.html" class="txt-uppercase">Home</a></div>
+                    <div class="navs-item notbtn"><a href="https://aetherz.xyz" class="txt-uppercase">Developer</a></div>
+                    <div class="navs-item notbtn"><a href="https://discord.com/oauth2/authorize?client_id=1248163258775371840" class="txt-uppercase">Invite</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="mt-4"></div>
+        <div class="row">
+            <div class="col-md-4 my-2">
+                <div class="card p-3">
+                    <h5>Select Commands Category</h5>
+                    <hr />
+                    <button onclick="active(this)" id="CategoryBtnAll" class="text-decoration-none btn btn-primary mt-2 my-1 p-2"><i class="fad fa-icons ttt"></i>&nbsp; All Commands</button>
+                    <button onclick="active(this)" id="CategoryBtn0" class="text-decoration-none btn btn-primary mt-2 my-1 p-2"><i class='fas fa-gift ttt'></i>&nbsp; Main Commands</button>
+                </div>
+            </div>
+            <div class="col-md-8 my-2">
+                <input type="text" class="w-100 search-box" oninput="search(this.value)" placeholder="Search for commands" />
+                <div class="mt-4"></div>
+
+                <div class="commands-section" id="Category0">
+                    <div class="accordion accordion-flush mt-2" id="play">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingPlay">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fplay">
+                                    /play&nbsp; <span class="command-descreption">- To listen to music</span>
+                                </button>
+                            </h2>
+                            <div id="fplay" class="accordion-collapse collapse" data-bs-parent="#play">
+                                <div class="accordion-body">
+                                    <span>Usage Examples:</span> <br />
+                                    <span class="examples">/play a7x - danger line<br></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion-flush mt-2" id="skip">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingSkip">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fskip">
+                                    /skip&nbsp; <span class="command-descreption">- To skip the current song</span>
+                                </button>
+                            </h2>
+                            <div id="fskip" class="accordion-collapse collapse" data-bs-parent="#skip">
+                                <div class="accordion-body">
+                                    <span>Usage Examples:</span> <br />
+                                    <span class="examples">/skip</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion-flush mt-2" id="resume">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingResume">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fresume">
+                                    /resume&nbsp; <span class="command-descreption">- Resume a paused track</span>
+                                </button>
+                            </h2>
+                            <div id="fresume" class="accordion-collapse collapse" data-bs-parent="#resume">
+                                <div class="accordion-body">
+                                    <span>Usage Examples:</span> <br />
+                                    <span class="examples">/resume</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion-flush mt-2" id="pause">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingPause">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fpause">
+                                    /pause&nbsp; <span class="command-descreption">- Pause the current track</span>
+                                </button>
+                            </h2>
+                            <div id="fpause" class="accordion-collapse collapse" data-bs-parent="#pause">
+                                <div class="accordion-body">
+                                    <span>Usage Examples:</span> <br />
+                                    <span class="examples">/pause</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion-flush mt-2" id="ping">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingPing">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fping">
+                                    /ping&nbsp; <span class="command-descreption">- Display the bot latency and API latency</span>
+                                </button>
+                            </h2>
+                            <div id="fping" class="accordion-collapse collapse" data-bs-parent="#ping">
+                                <div class="accordion-body">
+                                    <span>Usage Examples:</span> <br />
+                                    <span class="examples">/ping</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion-flush mt-2" id="stop">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingStop">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fstop">
+                                    /stop&nbsp; <span class="command-descreption">- Stop the current track and destroy the player</span>
+                                </button>
+                            </h2>
+                            <div id="fstop" class="accordion-collapse collapse" data-bs-parent="#stop">
+                                <div class="accordion-body">
+                                    <span>Usage Examples:</span> <br />
+                                    <span class="examples">/stop</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <input id="commands" value="[{&#34;title&#34;:&#34;&lt;i class=&#39;fas fa-gift ttt&#39;&gt;&lt;/i&gt;&amp;nbsp; Moderation Commands&#34;,&#34;commands&#34;:[&#34;ban&#34;,&#34;kick&#34;,&#34;mute&#34;]},{&#34;title&#34;:&#34;&lt;i class=&#39;fas fa-globe-europe ttt&#39;&gt;&lt;/i&gt;&amp;nbsp; General Commands&#34;,&#34;commands&#34;:[&#34;help&#34;,&#34;ping&#34;,&#34;invite&#34;]},{&#34;title&#34;:&#34;&lt;i class=&#39;fas fa-hammer-war ttt&#39;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp; Leveling Commands&#34;,&#34;commands&#34;:[&#34;leaderboard&#34;]},{&#34;title&#34;:&#34;&lt;i class=&#39;fas fas fa-crown ttt&#39;&gt;&lt;/i&gt;&amp;nbsp; Premium Commands&#34;,&#34;commands&#34;:[&#34;reactionrole&#34;,&#34;slowmode&#34;]}]"
+        hidden />
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/fontawesome/all.min.js"></script>
+    <script src="/js/animation.js"></script>
+    <script>
+        function active(elm) {
+            document.getElementById("CategoryBtnAll").classList.remove("active");
+
+            document.getElementById("CategoryBtn0").classList.remove("active");
+            document.getElementById("Category0").setAttribute("hidden", "");
+
+            elm.classList.add("active");
+            if (elm.id.replace("CategoryBtn", "") == "All") {
+                document.getElementById("Category0").removeAttribute("hidden");
+            } else {
+                document.getElementById("Category" + elm.id.replace("CategoryBtn", "")).removeAttribute("hidden");
+            }
+        }
+        document.getElementById("CategoryBtnAll").click();
+
+        function search(arg) {
+            let commands = JSON.parse(document.getElementById("commands").value);
+            let cmds = [];
+            commands.forEach(category => {
+                category.commands.forEach(command => {
+                    cmds.push(command);
+                });
+            });
+            let existedCmds = cmds.filter(obj => obj.includes(arg.toLowerCase()));
+            cmds.forEach(cmd => {
+                document.getElementById(cmd).setAttribute("hidden", "");
+            });
+            existedCmds.forEach(cmd => {
+                document.getElementById(cmd).removeAttribute("hidden");
+            });
+        }
+    </script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>
+
+</html>
