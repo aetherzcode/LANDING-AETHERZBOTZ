@@ -34,3 +34,28 @@ window.onload = () => {
         body.classList.remove("on")
     }, 1510);
 }
+
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("active");
+}
+
+// Menutup sidebar saat mengklik di luar sidebar
+document.addEventListener("click", function(event) {
+    const sidebar = document.getElementById("sidebar");
+    const toggler = document.querySelector(".navbar-toggler");
+
+    // Jika klik di luar sidebar dan tombol toggler, tutup sidebar
+    if (!sidebar.contains(event.target) && !toggler.contains(event.target)) {
+        sidebar.classList.remove("active");
+    }
+});
+
+// Menutup sidebar saat mengklik item menu
+const menuItems = document.querySelectorAll(".sidebar-menu li a");
+menuItems.forEach(item => {
+    item.addEventListener("click", function() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.remove("active");
+    });
+});
